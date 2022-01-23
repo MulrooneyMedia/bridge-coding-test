@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding test for Bridge</title>
+	<meta name="description" content="Front end web developer coding test for Bridge by Mark Mulrooney." />
+    
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+
+    <link media="all" rel="stylesheet" href="assets/css/reset.css">
+	<link media="all" rel="stylesheet" href="assets/css/bridge-style.css">
+</head>
+
+<body>
+	
+	<div class="veil"><!-- White partially opaque overlay --></div>
+
+    <div class="container ">
+
+		<form class="costsWrapper screen1Costs">
+			<h1>CALCULATING YOUR TOTAL COSTS</h1>
+			<div class="flexWrapper">
+				<div class="costParcel">
+					<input id="identifyRequirements" type="checkbox" checked />
+					<label for="identifyRequirements">Identify requirements</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">6.00</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="requestQuotation" type="checkbox" checked />
+					<label for="requestQuotation">Request a quotation</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">3.00</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="findProducts" type="checkbox" checked />
+					<label for="findProducts">Find products</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">16.00</span>
+					</div>
+				</div>
+
+
+
+				<div class="costParcel">
+					<input id="raiseOrder" type="checkbox" checked />
+					<label for="raiseOrder">Raise an order</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">6.00</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="authoriseSale" type="checkbox" checked />
+					<label for="authoriseSale">Authorise sale</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">21.55</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="payProvider" type="checkbox" checked />
+					<label for="payProvider">Pay provider</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">13.00</span>
+					</div>
+				</div>
+
+
+
+				<div class="costParcel">
+					<input id="deliverProduct" type="checkbox" checked />
+					<label for="deliverProduct">Deliver product</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">4.30</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="invoiceCheck" type="checkbox" checked />
+					<label for="invoiceCheck">Invoice check</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">6.00</span>
+					</div>
+				</div>
+
+				<div class="costParcel">
+					<input id="placeOrder" type="checkbox" checked />
+					<label for="placeOrder">Place order</label>
+					<div class="priceWrapper">
+						<span class="est">estimate</span>
+						<span class="price">6.50</span>
+					</div>
+				</div>
+
+				<div class="costParcel invisible">
+					<!-- Space filler for the first column -->
+				</div>
+
+				<div class="costParcel total">
+					<label for="totalCost">Total</label>
+					<div class="priceWrapper">
+						<span class="price" id="totalCost">0.00</span>
+					</div>
+				</div>
+
+				<div class="costParcel invisible">
+					<!-- Space filler for the third column containing the button -->
+					<button class="continue" title="#2">Continue</button>
+				</div>
+			</div>
+
+		</form>
+
+		<form class="questionScreen screen2Q1 ">
+			<h1>CALCULATING YOUR TOTAL COSTS - Q1 of 3</h1>
+			<div class="flexWrapper">
+				<a href="#1L" class="shiftButton shiftButtonLeft"></a>
+				<label for="annualSpend">What is your approximate annual Spend on industrial items?</label>
+				<a href="#3" class="shiftButton shiftButtonRight"></a>
+				<input id="annualSpend" type="number" value="50000" min="0" >
+			</div>
+		</form>
+
+		<form class="questionScreen screen3Q2 ">
+			<h1>CALCULATING YOUR TOTAL COSTS - Q2 of 3</h1>
+			<div class="flexWrapper">
+				<a href="#2L" class="shiftButton shiftButtonLeft"></a>
+				<label for="uniquePOs">Approximately how many unique purchase orders are raised per annum for these items?</label>
+				<a href="#4" class="shiftButton shiftButtonRight"></a>
+				<input id="uniquePOs" type="number" value="1300" min="0" >
+			</div>
+		</form>
+
+		<form class="questionScreen screen4Q3 ">
+			<h1>CALCULATING YOUR TOTAL COSTS - Q3 of 3</h1>
+			<div class="flexWrapper">
+				<a href="#3L" class="shiftButton shiftButtonLeft"></a>
+				<label for="suppliers">Approximately how many suppliers are you using for industrial supplies?</label>
+				<a href="#5" class="shiftButton shiftButtonRight"></a>
+				<input id="suppliers" type="number" value="30" min="0" >
+			</div>
+		</form>
+
+		<div class="screen5Results ">
+			<h1>CALCULATING YOUR TOTAL COSTS - YOUR RESULTS</h1>
+			<div class="flexWrapper">
+				<div class="paras">
+					<p class="main">By utilising the Bridge Sales Enablement Agency calculator organisations can simplify the processes associated with indirect procurement and unlock significant typical savings of up to 60% of process costs.</p>
+					<p>Based on what you have told us about your process we can estimate that the following costs are being insured within your procurement processes.</p>
+
+					<button class="continue goBack" title="#4L">Go back</button>
+				</div>
+				<div>
+					<table>
+						<tr>
+							<th>Supplier &amp; product</th>
+							<td id="sp">1</td>
+						</tr>
+						<tr>
+							<th>Quotation to order process</th>
+							<td id="qop">2</td>
+						</tr>
+						<tr>
+							<th>Expediting & receiving orders</th>
+							<td id="ero">3</td>
+						</tr>
+						<tr>
+							<th>Processing invoices</th>
+							<td id="pi">4</td>
+						</tr>
+						<tr>
+							<th>Paying suppliers</th>
+							<td id="ps">5</td>
+						</tr>
+						<tr id="grandTotalRow">
+							<th>Total Process Costs (year)</th>
+							<td id="grandTotal">0</td>
+						</tr>
+
+					</table>
+					<button class="sendReport" title="#6">Send me this report</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="screen6Thanks">
+			<h1>CALCULATING YOUR TOTAL COSTS</h1>
+			<p>Thank you for using the Bridge Sales Enablement Agency calculator. A representative will be in touch with you soon.</p>
+			<button class="restart hidden" title="#1Restart">Restart</button>
+		</div>
+
+    </div>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

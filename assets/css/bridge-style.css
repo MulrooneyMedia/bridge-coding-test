@@ -1,0 +1,463 @@
+@charset "UTF-8";
+/* Bridge coding test specific styling by Mark Mulrooney */
+@import url("https://rsms.me/inter/inter.css");
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-image: url("../images/office.png");
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
+  width: 100%;
+}
+
+.veil {
+  opacity: 0.59;
+  background-color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  bottom: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 114px 0;
+  width: 1280px;
+  min-height: 600px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.container h1 {
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 0 2em 0;
+  color: #DB2F20;
+  width: 100%;
+}
+
+.container button {
+  font-family: 'Inter', sans-serif;
+  background-color: #DB2F20;
+  color: #FFFFFF;
+  min-height: 38px;
+  line-height: 35px;
+  border-radius: 20px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 300;
+  position: relative;
+  cursor: pointer;
+}
+
+.container button.continue {
+  min-width: 124px;
+  padding-left: .75em;
+  padding-right: 2.5em;
+}
+
+.container button.continue:after {
+  content: "";
+  background-image: url("../images/arrow-red-right.svg");
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 7px;
+  top: 5px;
+}
+
+.container button.goBack {
+  padding-right: .75em;
+  padding-left: 2.5em;
+}
+
+.container button.goBack:after {
+  content: "";
+  background-image: url("../images/arrow-red-left.svg");
+  left: 7px;
+}
+
+.container button.sendReport {
+  font-size: 20px;
+  padding: 0 1.2em;
+}
+
+.container form.costsWrapper, .container form.questionScreen, .container .screen5Results, .container .screen6Thanks {
+  position: absolute;
+  width: 1280px;
+  min-height: 600px;
+}
+
+.container form.costsWrapper .flexWrapper, .container form.questionScreen .flexWrapper, .container .screen5Results .flexWrapper, .container .screen6Thanks .flexWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container form.questionScreen, .container .screen5Results, .container .screen6Thanks {
+  left: 2000px;
+}
+
+.container form.costsWrapper .costParcel {
+  display: inline-block;
+  background-color: #FFFFFF;
+  min-width: 324px;
+  min-height: 72px;
+  border-radius: 36px;
+  text-align: center;
+  line-height: 72px;
+  position: relative;
+  margin: 0 0 2em 0;
+}
+
+.container form.costsWrapper .costParcel input {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 16px;
+  top: 19px;
+}
+
+.container form.costsWrapper .costParcel input:before {
+  content: "";
+  background-image: url("../images/iconfinder_circle-uncheck_226590.svg");
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.container form.costsWrapper .costParcel input:checked:before {
+  background-image: url("../images/iconfinder_circle-check_226590.svg");
+}
+
+.container form.costsWrapper .costParcel label {
+  display: inline-block;
+  min-width: 6em;
+  font-size: 16px;
+  color: #5F259F;
+  padding-right: 2em;
+}
+
+.container form.costsWrapper .costParcel .priceWrapper {
+  position: absolute;
+  right: 20px;
+  top: -6px;
+}
+
+.container form.costsWrapper .costParcel span {
+  font-size: 12px;
+  display: block;
+  height: 1.2em;
+}
+
+.container form.costsWrapper .costParcel span.est {
+  text-transform: uppercase;
+  color: #C7B3DD;
+  font-weight: 700;
+}
+
+.container form.costsWrapper .costParcel span.price:before {
+  content: '£ ';
+}
+
+.container form.costsWrapper .costParcel.total {
+  text-align: left;
+}
+
+.container form.costsWrapper .costParcel.total label {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 2em;
+}
+
+.container form.costsWrapper .costParcel.total .priceWrapper {
+  top: 0px;
+}
+
+.container form.costsWrapper .costParcel.total span.price {
+  font-size: 28px;
+  color: #DB2F20;
+}
+
+.container form.costsWrapper .costParcel.invisible {
+  background-color: transparent;
+}
+
+.container form.questionScreen h1 {
+  margin-bottom: 7em;
+}
+
+.container form.questionScreen .shiftButton {
+  display: inline-block;
+  margin-top: 1.4em;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #DB2F20;
+  background-image: url("../images/chevron-white-left.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container form.questionScreen .shiftButton.shiftButtonRight {
+  background-image: url("../images/chevron-white-right.svg");
+}
+
+.container form.questionScreen label {
+  font-size: 32px;
+  line-height: 40px;
+  color: #DB2F20;
+  display: inline-block;
+  width: 494px;
+  padding: 0 1em;
+}
+
+.container form.questionScreen input {
+  width: 160px;
+  height: 64px;
+  font-size: 24px;
+  color: #979797;
+  border-radius: 5px;
+  border: 0;
+  padding: 0 1em;
+  margin-left: 120px;
+}
+
+.container .screen5Results > div {
+  text-align: left;
+}
+
+.container .screen5Results .paras {
+  margin-right: 40px;
+}
+
+.container .screen5Results p {
+  max-width: 576px;
+  margin-bottom: 3em;
+  line-height: 20px;
+}
+
+.container .screen5Results p.main {
+  font-size: 24px;
+  font-weight: 700;
+  color: #DB2F20;
+  line-height: 32px;
+  margin-bottom: 1em;
+}
+
+.container .screen5Results table {
+  width: 576px;
+  border-collapse: separate;
+  border-spacing: 0 .5em;
+  margin-bottom: 1.2em;
+}
+
+.container .screen5Results table td, .container .screen5Results table th {
+  color: #FFFFFF;
+  padding: 10px 20px;
+  background-color: #DB2F20;
+  text-align: left;
+}
+
+.container .screen5Results table td {
+  border-radius: 0 20px 20px 0;
+}
+
+.container .screen5Results table td:before {
+  content: '£ ';
+}
+
+.container .screen5Results table th {
+  background: #FFFFFF;
+  color: #2B2B2B;
+  width: 75%;
+  border-radius: 20px 0 0 20px;
+}
+
+.container .screen5Results table #grandTotalRow th {
+  background-color: #5F259F;
+  color: #FFFFFF;
+}
+
+.container .screen5Results table #grandTotalRow td {
+  background-color: #FFFFFF;
+  color: #5F259F;
+}
+
+.container .screen6Thanks p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #DB2F20;
+  text-align: center;
+  width: 576px;
+  margin: 8em auto 4em;
+}
+
+.container .screen6Thanks button.restart {
+  padding: 0 1.5em;
+  font-size: 20px;
+}
+
+.comeInToView, .comeInToViewFromLeft, .pushOff, .fadeUp {
+  -webkit-animation-name: shiftLeftOffAnim;
+          animation-name: shiftLeftOffAnim;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.comeInToView {
+  -webkit-animation-name: comeInToViewAnim;
+          animation-name: comeInToViewAnim;
+}
+
+.pushOff {
+  -webkit-animation-name: pushOffAnim;
+          animation-name: pushOffAnim;
+}
+
+.comeInToViewFromLeft {
+  -webkit-animation-name: comeInToViewFromLeftAnim;
+          animation-name: comeInToViewFromLeftAnim;
+}
+
+.pushOffRight {
+  -webkit-animation-name: pushOffRightAnim;
+          animation-name: pushOffRightAnim;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.fadeUp {
+  -webkit-animation-name: fadeUpAnim;
+          animation-name: fadeUpAnim;
+}
+
+@-webkit-keyframes comeInToViewAnim {
+  0% {
+    left: 2000px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes comeInToViewAnim {
+  0% {
+    left: 2000px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes comeInToViewFromLeftAnim {
+  0% {
+    left: -2000px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes comeInToViewFromLeftAnim {
+  0% {
+    left: -2000px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes pushOffAnim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -2000px;
+  }
+}
+
+@keyframes pushOffAnim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -2000px;
+  }
+}
+
+@-webkit-keyframes pushOffRightAnim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 2000px;
+  }
+}
+
+@keyframes pushOffRightAnim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 2000px;
+  }
+}
+
+@-webkit-keyframes fadeUpAnim {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUpAnim {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=bridge-style.css.map */

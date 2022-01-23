@@ -1,0 +1,394 @@
+/* Bridge coding test specific styling by Mark Mulrooney */
+
+@import url('https://rsms.me/inter/inter.css');
+
+$red: #DB2F20;
+$purple: #5F259F;
+$lightPurple: #C7B3DD;
+$lightGrey: #979797;
+$white: #FFFFFF;
+$offBlack: #2B2B2B;
+
+$offRight: 2000px;
+$offLeft: -2000px;
+$viewportHeight: 600px;
+
+html,
+body {
+	height: 100%;
+	position: relative;
+}
+
+html {
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	background-image: url("../images/office.png");
+	background-size: cover;
+	background-position: center;
+	backdrop-filter: blur(9px);
+	width: 100%;
+}
+
+.veil {	
+	opacity: 0.59;
+	background-color: $white;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	bottom: 0;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 114px 0;
+	width: 1280px;
+	min-height: $viewportHeight;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid black;;
+
+	h1 {
+		font-weight: 500;
+		font-size: 24px;
+		margin: 0 0 2em 0;
+		color: $red;
+		width: 100%;
+	}
+
+	button {
+		font-family: 'Inter', sans-serif;
+		background-color: $red;
+		color: $white;
+		min-height: 38px;
+		line-height: 35px;
+		border-radius: 20px;
+		border: 0;
+		font-size: 16px;
+		font-weight: 300;
+		position: relative;
+		cursor: pointer;
+		&.continue {
+			min-width: 124px;
+			padding-left: .75em;
+			padding-right: 2.5em;
+			&:after {
+				content: "";
+				background-image: url('../images/arrow-red-right.svg');
+				display: inline-block;
+				width: 28px;
+				height: 28px;
+				position: absolute;
+				right: 7px;
+				top: 5px;
+			}
+		}
+		&.goBack {
+			padding-right: .75em;
+			padding-left: 2.5em;
+				&:after {
+				content: "";
+				background-image: url('../images/arrow-red-left.svg');
+				left: 7px;
+			}
+		}
+		&.sendReport {
+			font-size: 20px;
+			padding: 0 1.2em;
+		}
+	}
+
+	form.costsWrapper, form.questionScreen, .screen5Results, .screen6Thanks {
+		position: absolute;
+		width: 1280px;
+		min-height: $viewportHeight;
+		.flexWrapper {
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+		}
+	}
+	form.questionScreen, .screen5Results, .screen6Thanks {
+		left: $offRight;
+	}
+
+	form.costsWrapper {
+
+		.costParcel {
+			display: inline-block;
+			background-color: $white;
+			min-width: 324px;
+			min-height: 72px;
+			border-radius: 36px;
+			text-align: center;
+			line-height: 72px;
+			position: relative;
+			margin: 0 0 2em 0;
+
+			input {
+				width: 32px;
+				height: 32px;
+				position: absolute;
+				left: 16px;
+				top:19px;
+
+				&:before {
+					content: "";
+					background-image: url('../images/iconfinder_circle-uncheck_226590.svg');
+					background-color: $white;
+					position: absolute;
+					left: 0;
+					top: 0;
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+					z-index: 10;
+				}
+			}
+			input:checked {
+				&:before {
+					background-image: url('../images/iconfinder_circle-check_226590.svg');
+				}
+			}
+			label {
+				display: inline-block;
+				min-width: 6em;
+				font-size: 16px;
+				color: $purple;
+				padding-right: 2em;
+			}
+			.priceWrapper {
+				position: absolute;
+				right: 20px;
+				top:-6px
+			}
+			span {
+				font-size: 12px;
+				display: block;
+				height: 1.2em;
+			}
+			span.est {
+				text-transform: uppercase;
+				color: $lightPurple;
+				font-weight: 700;
+			}
+			span.price {
+				&:before {
+					content: '£ ';
+				}
+			}
+			&.total {
+				text-align: left;
+				label {
+					text-transform: uppercase;
+					font-weight: 700;
+					padding-left: 2em;
+				}
+				.priceWrapper {
+					top: 0px;
+				}
+				span.price {
+					font-size: 28px;
+					color: $red;
+				}
+			}
+			&.invisible {
+				background-color: transparent;
+			}
+		}		
+	}
+
+
+	form.questionScreen {
+		h1 {
+			margin-bottom: 7em;
+		}
+		.shiftButton {
+			display:inline-block;
+			margin-top: 1.4em;
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			background-color: $red;
+			background-image: url('../images/chevron-white-left.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			&.shiftButtonRight {
+				background-image: url('../images/chevron-white-right.svg');
+			}
+		}
+		label {
+			font-size: 32px;
+			line-height: 40px;
+			color:$red;
+			display: inline-block;
+			width: 494px;
+			padding: 0 1em;
+		}
+		input {
+			width: 160px;
+			height: 64px;
+			font-size: 24px;
+			color: $lightGrey;
+			border-radius: 5px;
+			border: 0;
+			padding: 0 1em;
+			margin-left: 120px;
+		}
+	}
+
+	.screen5Results {
+		>div {text-align: left;}
+		.paras {
+			margin-right: 40px;
+		}
+		p {
+			max-width: 576px;
+			margin-bottom: 3em;
+			line-height: 20px;
+		}
+		p.main {
+			font-size: 24px;
+			font-weight: 700;
+			color: $red;
+			line-height: 32px;
+			margin-bottom: 1em;
+			
+		}
+		table {
+			width: 576px;
+			border-collapse: separate;
+    		border-spacing: 0 .5em;
+			margin-bottom: 1.2em;
+
+			td, th {
+				color: $white;
+				padding: 10px 20px;
+				background-color: $red;
+				text-align: left;
+			}
+			td {
+				border-radius: 0 20px 20px 0;
+				&:before {
+					content: '£ ';
+				}
+			}
+			th {
+				background: $white;
+				color: $offBlack;
+				width: 75%;
+				border-radius: 20px 0 0 20px;
+			}
+			#grandTotalRow {
+				th {
+					background-color: $purple;
+					color: $white;
+				}
+				td {
+					background-color: $white;
+					color: $purple;
+				}
+			}
+		}
+	}
+
+	.screen6Thanks {
+		p {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 32px;
+			color: $red;
+			text-align: center;
+			width: 576px;
+			margin: 8em auto 4em;
+		}
+		button.restart {
+			padding: 0 1.5em;
+			font-size: 20px;
+		}
+	}
+}
+
+.comeInToView, .comeInToViewFromLeft, .pushOff, .fadeUp  {
+	animation-name: shiftLeftOffAnim;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-duration: .5s; 
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.comeInToView {
+	animation-name: comeInToViewAnim;
+}
+.pushOff {
+	animation-name: pushOffAnim;
+}
+
+.comeInToViewFromLeft {
+	animation-name: comeInToViewFromLeftAnim;
+}
+.pushOffRight {
+	animation-name: pushOffRightAnim;
+}
+
+
+.hidden {
+	display: none;
+	opacity: 0;
+}
+
+.fadeUp {
+	animation-name: fadeUpAnim;
+}
+
+
+@keyframes comeInToViewAnim {
+	0% {
+		left: $offRight;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes comeInToViewFromLeftAnim {
+	0% {
+		left: $offLeft;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes pushOffAnim {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: $offLeft;
+	}
+}
+
+@keyframes pushOffRightAnim {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: $offRight;
+	}
+}
+
+@keyframes fadeUpAnim {
+	0% {
+		opacity: 0;
+		display: block;
+	}
+	100% {
+		opacity: 1;
+	}
+}
