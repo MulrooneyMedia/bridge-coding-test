@@ -13,11 +13,9 @@ html {
 }
 
 body {
-  background-image: url("../images/office.png");
+  background-image: url("../images/office-blur-6px.png");
   background-size: cover;
   background-position: center;
-  -webkit-backdrop-filter: blur(9px);
-          backdrop-filter: blur(9px);
   width: 100%;
 }
 
