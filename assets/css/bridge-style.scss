@@ -128,31 +128,37 @@ body {
 			position: relative;
 			margin: 0 0 2em 0;
 
+			/* A stylised check circle with tick to replace the default checkbox */
+			&::after {
+				content: "";
+				background-image: url('../images/iconfinder_circle-check_226590.svg');
+				background-color: $white;
+				position: absolute;
+				left: 20px;
+				top: 22px;
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				z-index: 1;
+			}
+
+			&.unchecked {
+				&::after {
+			 		background-image: url('../images/iconfinder_circle-uncheck_226590.svg');
+			 	}
+			}
+
+			/* position but make transparent the default checkbox */
 			input {
 				width: 32px;
 				height: 32px;
 				position: absolute;
 				left: 16px;
 				top:19px;
+				z-index: 2;
+				opacity: 0;
+			}
 
-				&:before {
-					content: "";
-					background-image: url('../images/iconfinder_circle-uncheck_226590.svg');
-					background-color: $white;
-					position: absolute;
-					left: 0;
-					top: 0;
-					display: inline-block;
-					width: 100%;
-					height: 100%;
-					z-index: 10;
-				}
-			}
-			input:checked {
-				&:before {
-					background-image: url('../images/iconfinder_circle-check_226590.svg');
-				}
-			}
 			label {
 				display: inline-block;
 				min-width: 6em;
@@ -198,6 +204,12 @@ body {
 			&.invisible {
 				background-color: transparent;
 			}
+			&.total, &.invisible {
+				&::after {
+					display: none;
+				}
+			}
+
 		}		
 	}
 

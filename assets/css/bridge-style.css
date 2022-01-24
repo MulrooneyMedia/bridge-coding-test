@@ -127,6 +127,25 @@ body {
   line-height: 72px;
   position: relative;
   margin: 0 0 2em 0;
+  /* A stylised check circle with tick to replace the default checkbox */
+  /* position but make transparent the default checkbox */
+}
+
+.container form.costsWrapper .costParcel::after {
+  content: "";
+  background-image: url("../images/iconfinder_circle-check_226590.svg");
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+}
+
+.container form.costsWrapper .costParcel.unchecked::after {
+  background-image: url("../images/iconfinder_circle-uncheck_226590.svg");
 }
 
 .container form.costsWrapper .costParcel input {
@@ -135,23 +154,8 @@ body {
   position: absolute;
   left: 16px;
   top: 19px;
-}
-
-.container form.costsWrapper .costParcel input:before {
-  content: "";
-  background-image: url("../images/iconfinder_circle-uncheck_226590.svg");
-  background-color: #FFFFFF;
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
-
-.container form.costsWrapper .costParcel input:checked:before {
-  background-image: url("../images/iconfinder_circle-check_226590.svg");
+  z-index: 2;
+  opacity: 0;
 }
 
 .container form.costsWrapper .costParcel label {
@@ -205,6 +209,10 @@ body {
 
 .container form.costsWrapper .costParcel.invisible {
   background-color: transparent;
+}
+
+.container form.costsWrapper .costParcel.total::after, .container form.costsWrapper .costParcel.invisible::after {
+  display: none;
 }
 
 .container form.questionScreen h1 {
