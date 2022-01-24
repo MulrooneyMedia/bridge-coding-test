@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				counter += thisPrice;
 				totalPrice = counter.toFixed(2);
 			}
+			// Unchecked checkboxes get a class on the parent
+			else {element.classList.add('unchecked');}
 		});
 
 		totalCost.innerHTML = totalPrice;
@@ -32,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			let checkBox = element.querySelector('input');
 			checkBox.addEventListener('click', function(e) {
 				totalCostCalculator();
+				console.log(`${element} ${checkBox.checked}`);
+				if (checkBox.checked === false) {
+					element.classList.add('unchecked');
+				}
+				else {element.classList.remove('unchecked');}
 			});
 		});
 	}
